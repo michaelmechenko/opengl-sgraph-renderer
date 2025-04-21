@@ -34,6 +34,7 @@
 main
 output.ppm
 compile_commands.json
-lib
-include
-glad
+glad/.DS_Store
+include/GLFW/.DS_Store
+lib/.DS_Store
+include/.DS_Store
