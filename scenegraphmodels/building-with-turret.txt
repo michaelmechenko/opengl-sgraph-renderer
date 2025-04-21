@@ -1,0 +1,138 @@
+# instances
+instance box models/box.obj
+instance cylinder models/cylinder.obj
+
+# materials
+material floor-mat
+ambient 0.35 0.25 0
+end-material
+
+material roof-mat
+ambient 1 1 0.8
+end-material
+
+material wall-mat
+ambient 0.65 0.78 0.9
+end-material
+
+material turret-mat
+ambient 0.75 0.27 0.34
+end-material
+
+material turret-spike-mat
+ambient 0.75 0.5 0.34
+end-material
+
+group root root
+assign-root root
+
+# floor
+scale scale-floor scale-floor 50 5 50
+add-child scale-floor root
+leaf floor floor instanceof box
+assign-material floor floor-mat
+add-child floor scale-floor
+
+# west ceiling
+rotate rotate-west-ceiling rotate-west-ceiling 45 1 0 0
+translate translate-west-ceiling translate-west-ceiling 0 45 -25
+scale scale-west-ceiling scale-west-ceiling 50 5 50
+add-child rotate-west-ceiling root
+add-child translate-west-ceiling rotate-west-ceiling
+add-child scale-west-ceiling translate-west-ceiling
+leaf west-ceiling west-ceiling instanceof box
+assign-material west-ceiling roof-mat
+add-child west-ceiling scale-west-ceiling
+
+# east ceiling
+rotate rotate-east-ceiling rotate-east-ceiling -45 1 0 0
+translate translate-east-ceiling translate-east-ceiling 0 45 25
+scale scale-east-ceiling scale-east-ceiling 50 5 50
+add-child rotate-east-ceiling root
+add-child translate-east-ceiling rotate-east-ceiling
+add-child scale-east-ceiling translate-east-ceiling
+leaf east-ceiling east-ceiling instanceof box
+assign-material east-ceiling roof-mat
+add-child east-ceiling scale-east-ceiling
+
+# north wall
+translate translate-north-wall translate-north-wall -25 20 0
+scale scale-north-wall scale-north-wall 5 35 50
+add-child translate-north-wall root
+add-child scale-north-wall translate-north-wall
+leaf north-wall north-wall instanceof box
+assign-material north-wall wall-mat
+add-child north-wall scale-north-wall
+
+# south wall
+translate translate-south-wall translate-south-wall 25 20 0
+scale scale-south-wall scale-south-wall 5 35 50
+add-child translate-south-wall root
+add-child scale-south-wall translate-south-wall
+leaf south-wall south-wall instanceof box
+assign-material south-wall wall-mat
+add-child south-wall scale-south-wall
+
+# east wall
+translate translate-east-wall translate-east-wall 0 20 -25
+scale scale-east-wall scale-east-wall 50 35 5
+add-child translate-east-wall root
+add-child scale-east-wall translate-east-wall
+leaf east-wall east-wall instanceof box
+assign-material east-wall wall-mat
+add-child east-wall scale-east-wall
+
+# west wall
+translate translate-west-wall translate-west-wall 0 20 25
+scale scale-west-wall scale-west-wall 50 35 5
+add-child translate-west-wall root
+add-child scale-west-wall translate-west-wall
+leaf west-wall west-wall instanceof box
+assign-material west-wall wall-mat
+add-child west-wall scale-west-wall
+
+# turret
+translate translate-turret translate-turret -20 0 20
+scale scale-turret scale-turret 5 100 5
+add-child translate-turret root
+add-child scale-turret translate-turret
+leaf turret turret instanceof cylinder
+assign-material turret turret-mat
+add-child turret scale-turret
+
+# turret spikes
+group turret-spikes turret-spikes
+translate translate-turret-spike translate-turret-spike -20 100 20
+scale scale-turret-spike scale-turret-spike 2 15 2
+add-child translate-turret-spike root
+add-child scale-turret-spike translate-turret-spike
+add-child turret-spikes scale-turret-spike
+
+# north spike
+leaf north-turret-spike north-turret-spike instanceof box
+assign-material north-turret-spike turret-spike-mat
+translate translate-north-spike translate-north-spike -2 0 0
+add-child translate-north-spike turret-spikes
+add-child north-turret-spike translate-north-spike
+
+# south spike
+leaf south-turret-spike south-turret-spike instanceof box
+assign-material south-turret-spike turret-spike-mat
+translate translate-south-spike translate-south-spike 2 0 0
+add-child translate-south-spike turret-spikes
+add-child south-turret-spike translate-south-spike
+
+# east spike
+leaf east-turret-spike east-turret-spike instanceof box
+assign-material east-turret-spike turret-spike-mat
+translate translate-east-spike translate-east-spike 0 0 -2
+add-child translate-east-spike turret-spikes
+add-child east-turret-spike translate-east-spike
+
+# west spike
+leaf west-turret-spike west-turret-spike instanceof box
+assign-material west-turret-spike turret-spike-mat
+translate translate-west-spike translate-west-spike 0 0 2
+add-child translate-west-spike turret-spikes
+add-child west-turret-spike translate-west-spike
+

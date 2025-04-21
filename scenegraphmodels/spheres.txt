@@ -1,0 +1,37 @@
+#all the instances
+instance sphere models/sphere.obj
+
+#material
+material mat-node-3-0
+emission 0 0 0
+ambient 0 0 1
+diffuse 0 0 1
+specular 0 0 1
+shininess 0
+end-material
+
+material mat-node-4-0
+emission 0 0 0
+ambient 1 0 0
+diffuse 1 0 0
+specular 1 0 0
+shininess 0
+end-material
+
+#the root
+group node-1-0 root
+scale node-2-0 scale 100 100 100
+scale scale-node-4-0 scale 100 100 100
+translate translate-node-4-0 translate-node-4-0 0 0 -100
+leaf node-3-0 one-sphere instanceof sphere
+leaf node-4-0 one-sphere instanceof sphere
+assign-material node-3-0 mat-node-3-0
+assign-material node-4-0 mat-node-4-0
+
+add-child translate-node-4-0 node-1-0
+add-child scale-node-4-0 translate-node-4-0
+add-child node-4-0 scale-node-4-0
+add-child node-3-0 node-2-0
+add-child node-2-0 node-1-0
+assign-root node-1-0
+

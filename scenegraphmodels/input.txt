@@ -1,0 +1,100 @@
+#all the instances
+instance box models/box-outside.obj
+instance sphere models/sphere.obj
+
+#materials
+material box-material
+emission 0 0 0
+ambient 0.3 0.3 0.3
+diffuse 0.8 0.8 0.8
+specular 0.8 0.8 0.8
+shininess 100
+end-material
+
+
+material ground-material
+emission 0 0 0
+ambient 0.3 0.9 0.3
+diffuse 0.8 0.8 0.8
+specular 0.8 0.8 0.8
+shininess 50
+end-material
+
+material sphere-material
+emission 0 0 0
+ambient 0.3 0.5 0
+diffuse 0.8 0.8 0
+specular 0.8 0.8 0
+shininess 80
+
+end-material
+
+#lights
+light one-light
+ambient 0.3 0.3 0.3
+diffuse 0.5 0.5 0.5
+specular 0.5 0.5 0.5
+position 0 0 30
+end-light
+
+#lights
+light two-light
+ambient 0.2 0.2 0.2
+diffuse 0.5 0.5 0.5
+specular 0.5 0.5 0.5
+position 0 10 0
+spot-direction 0 1 0 
+
+spot-angle 50
+
+end-light
+
+#textures
+image white textures/earthmap.ppm
+image checkerboard textures/checkerboard.ppm
+
+#the root
+group root root
+assign-light root one-light
+assign-light root two-light
+
+#box
+translate b-translate b-translate -30 0 0
+scale b-scale b-scale 20 20 20
+leaf one-box one-box instanceof box 
+assign-material one-box box-material
+
+# assign-texture one-box white
+
+
+add-child one-box b-scale
+add-child b-scale b-translate
+add-child b-translate root
+
+#box
+translate b2-translate b2-translate 0 -25 0
+scale b2-scale b2-scale 160 10 160
+leaf two-box two-box instanceof box 
+
+assign-material two-box ground-material
+# assign-texture two-box white
+
+
+add-child two-box b2-scale
+add-child b2-scale b2-translate
+add-child b2-translate root
+
+#sphere
+translate s-translate s-translate 30 0 0
+scale s-scale s-scale 10 10 10
+leaf one-sphere one-sphere instanceof sphere 
+assign-material one-sphere sphere-material
+
+# assign-texture one-sphere checkerboard
+
+
+add-child one-sphere s-scale
+add-child s-scale s-translate
+add-child s-translate root
+
+assign-root root

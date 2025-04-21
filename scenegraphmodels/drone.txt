@@ -1,0 +1,226 @@
+# instances
+instance box models/box.obj
+instance cylinder models/cylinder.obj
+instance cone models/cone.obj
+instance sphere models/sphere.obj
+
+# materials
+material body-mat
+ambient 0.7 0.7 0.7
+end-material
+
+material nose-mat
+ambient 1 0 0
+end-material
+
+material wing-mat
+ambient 0.2 0.2 0.2
+end-material
+
+material blade-mat
+ambient 0 255 0
+end-material
+
+material conn-mat
+ambient 0 0 255
+end-material
+
+material leg-mat
+ambient 0.3 0.3 0.3
+end-material
+
+group root root
+assign-root root
+
+###############################
+# body
+###############################
+
+group body body
+rotate rotate-body rotate-body 90 1 0 0
+add-child rotate-body root
+scale scale-body scale-body 20 50 20
+add-child scale-body rotate-body
+leaf fuselage fuselage instanceof cylinder
+assign-material fuselage body-mat
+add-child fuselage scale-body
+add-child body root
+
+###############################
+# nose/front
+###############################
+
+translate translate-nose translate-nose 0 0 50
+add-child translate-nose root
+rotate rotate-nose rotate-nose 90 1 0 0
+add-child rotate-nose translate-nose
+scale scale-nose scale-nose 20 20 20
+add-child scale-nose rotate-nose
+leaf nose nose instanceof cone
+assign-material nose nose-mat
+add-child nose scale-nose
+
+###############################
+# wing
+###############################
+
+translate translate-wing translate-wing 0 0 25
+add-child translate-wing root
+scale scale-wing scale-wing 50 2 20
+add-child scale-wing translate-wing
+leaf wing wing instanceof cylinder
+assign-material wing wing-mat
+add-child wing scale-wing
+
+###############################
+# first prop fan
+###############################
+
+# propellor 1
+translate translate-prop1 translate-prop1 30 25 25
+add-child translate-prop1 root
+group prop1 prop1
+add-child prop1 translate-prop1
+
+# connection 1
+translate translate-conn1 translate-conn1 0 0 0
+add-child translate-conn1 prop1
+scale scale-conn1 scale-conn1 1 -24 1
+add-child scale-conn1 translate-conn1
+leaf conn1 conn1 instanceof cylinder
+assign-material conn1 conn-mat
+add-child conn1 scale-conn1
+
+# blade 1
+translate translate-blade1 translate-blade1 0 0 0
+add-child translate-blade1 prop1
+scale scale-blade1 scale-blade1 36 2 4
+add-child scale-blade1 translate-blade1
+leaf blade1 blade1 instanceof box
+assign-material blade1 blade-mat
+add-child blade1 scale-blade1
+
+# blade 2
+translate translate-blade2 translate-blade2 0 0 0
+add-child translate-blade2 prop1
+rotate rotate-blade2 rotate-blade2 90 0 1 0
+add-child rotate-blade2 translate-blade2
+scale scale-blade2 scale-blade2 36 2 4
+add-child scale-blade2 rotate-blade2
+leaf blade2 blade2 instanceof box
+assign-material blade2 blade-mat
+add-child blade2 scale-blade2
+
+# blade 3
+translate translate-blade3 translate-blade3 0 0 0
+add-child translate-blade3 prop1
+rotate rotate-blade3 rotate-blade3 180 0 1 0
+add-child rotate-blade3 translate-blade3
+scale scale-blade3 scale-blade3 36 2 4
+add-child scale-blade3 rotate-blade3
+leaf blade3 blade3 instanceof box
+assign-material blade3 blade-mat
+add-child blade3 scale-blade3
+
+# blade 4
+translate translate-blade4 translate-blade4 0 0 0
+add-child translate-blade4 prop1
+rotate rotate-blade4 rotate-blade4 270 0 1 0
+add-child rotate-blade4 translate-blade4
+scale scale-blade4 scale-blade4 36 2 4
+add-child scale-blade4 rotate-blade4
+leaf blade4 blade4 instanceof box
+assign-material blade4 blade-mat
+add-child blade4 scale-blade4
+
+####################################
+# second prop fan
+####################################
+
+translate translate-prop2 translate-prop2 -30 25 25
+add-child translate-prop2 root
+group prop2 prop2
+add-child prop2 translate-prop2
+
+# connection 2
+translate translate-conn2 translate-conn2 0 0 0
+add-child translate-conn2 prop2
+scale scale-conn2 scale-conn2 1 -24 1
+add-child scale-conn2 translate-conn2
+leaf conn2 conn2 instanceof cylinder
+assign-material conn2 conn-mat
+add-child conn2 scale-conn2
+
+# blade 1
+translate translate-blade1b translate-blade1b 0 0 0
+add-child translate-blade1b prop2
+scale scale-blade1b scale-blade1b 36 2 4
+add-child scale-blade1b translate-blade1b
+leaf blade1b blade1b instanceof box
+assign-material blade1b blade-mat
+add-child blade1b scale-blade1b
+
+# blade 2
+translate translate-blade2b translate-blade2b 0 0 0
+add-child translate-blade2b prop2
+rotate rotate-blade2b rotate-blade2b 90 0 1 0
+add-child rotate-blade2b translate-blade2b
+scale scale-blade2b scale-blade2b 36 2 4
+add-child scale-blade2b rotate-blade2b
+leaf blade2b blade2b instanceof box
+assign-material blade2b blade-mat
+add-child blade2b scale-blade2b
+
+# blade 3
+translate translate-blade3b translate-blade3b 0 0 0
+add-child translate-blade3b prop2
+rotate rotate-blade3b rotate-blade3b 180 0 1 0
+add-child rotate-blade3b translate-blade3b
+scale scale-blade3b scale-blade3b 36 2 4
+add-child scale-blade3b rotate-blade3b
+leaf blade3b blade3b instanceof box
+assign-material blade3b blade-mat
+add-child blade3b scale-blade3b
+
+# blade 4
+translate translate-blade4b translate-blade4b 0 0 0
+add-child translate-blade4b prop2
+rotate rotate-blade4b rotate-blade4b 270 0 1 0
+add-child rotate-blade4b translate-blade4b
+scale scale-blade4b scale-blade4b 36 2 4
+add-child scale-blade4b rotate-blade4b
+leaf blade4b blade4b instanceof box
+assign-material blade4b blade-mat
+add-child blade4b scale-blade4b
+
+###############################
+# legs
+###############################
+
+# left leg
+translate translate-legL translate-legL -15 -22 20
+add-child translate-legL body
+scale scale-legL scale-legL 1 20 1
+add-child scale-legL translate-legL
+leaf legL legL instanceof cylinder
+assign-material legL leg-mat
+add-child legL scale-legL
+
+# right leg
+translate translate-legR translate-legR 15 -22 20
+add-child translate-legR body
+scale scale-legR scale-legR 1 20 1
+add-child scale-legR translate-legR
+leaf legR legR instanceof cylinder
+assign-material legR leg-mat
+add-child legR scale-legR
+
+# center leg
+translate translate-legC translate-legC 0 -22 10
+add-child translate-legC body
+scale scale-legC scale-legC 1 20 1
+add-child scale-legC translate-legC
+leaf legC legC instanceof cylinder
+assign-material legC leg-mat
+add-child legC scale-legC
+

@@ -1,0 +1,48 @@
+light one-light
+ambient 0.3 0.3 0.3
+diffuse 0.5 0.5 0.5
+specular 0.5 0.5 0.5
+position 20 20 20
+end-light
+
+group full-scene full-scene
+assign-light one-light full-scene
+
+# floor
+translate t-floor t-floor 0 -2 0
+add-child t-floor full-scene
+
+import floor scenegraphmodels/floor.txt
+add-child floor t-floor
+
+# building
+import building scenegraphmodels/building-with-turret.txt
+add-child building full-scene
+
+# humanoids
+import human-1 scenegraphmodels/posed-humanoid-1.txt
+import human-2 scenegraphmodels/posed-humanoid-2.txt
+
+# human 1
+translate t-human-1 t-human-1 50 -2 0
+rotate r-human-1 r-human-1 30 0 1 0
+add-child r-human-1 full-scene
+add-child t-human-1 r-human-1
+
+scale s-human-1 s-human-1 22 22 22
+add-child s-human-1 t-human-1
+
+add-child human-1 s-human-1
+
+# human 2
+translate t-human-2 t-human-2 0 68 20
+rotate r-human-2 r-human-2 90 0 1 0
+add-child r-human-2 full-scene
+add-child t-human-2 r-human-2
+
+scale s-human-2 s-human-2 22 22 22
+add-child s-human-2 t-human-2
+
+add-child human-2 s-human-2
+
+assign-root full-scene

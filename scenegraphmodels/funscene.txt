@@ -1,0 +1,281 @@
+# Define the two instances (only box and sphere are available)
+instance box models/box.obj
+instance sphere models/sphere.obj
+
+# Define materials
+material mat-floor
+emission 0 0 0
+ambient 0.5 0.5 0.5
+diffuse 0.5 0.5 0.5
+specular 0.5 0.5 0.5
+absorption 0.5
+reflection 0.5
+shininess 5
+end-material
+
+material mat-tower
+emission 0 0 0
+ambient 1 0 0
+diffuse 1 0 0
+specular 1 0 0
+shininess 10
+absorption 0.6
+reflection 0.4
+end-material
+
+material mat-top
+emission 0 0 0
+ambient 0 0 1
+diffuse 0 0 1
+specular 0 0 1
+shininess 10
+absorption 0.6
+reflection 0.4
+end-material
+
+material mat-sphere
+emission 0 0 0
+ambient 0 1 0
+diffuse 0 1 0
+specular 0 1 0
+absorption 0.6
+reflection 0.4
+shininess 10
+end-material
+
+material mat-sky
+emission 0 0 0
+ambient 1 1 0
+diffuse 1 1 0
+specular 1 1 0
+shininess 10
+end-material
+
+# --------------------------------------------------------------------------
+# Lights
+# --------------------------------------------------------------------------
+light one-light
+ambient 0.3 0.3 0.3
+diffuse 0.5 0.5 0.5
+specular 0.5 0.5 0.5
+position 0 0 30
+end-light
+
+light two-light
+ambient 0.2 0.2 0.2
+diffuse 0.5 0.5 0.5
+specular 0.5 0.5 0.5
+position 0 10 0
+spot-direction 0 1 0 
+spot-angle 50
+end-light
+
+# --------------------------------------------------------------------------
+# Textures
+# --------------------------------------------------------------------------
+image white textures/earthmap.ppm
+image checkerboard textures/checkerboard.ppm
+
+##########################################################################
+# Global Translation (move scene away from camera)
+##########################################################################
+translate global-trans translate-global -200 -200 -200
+
+# Create the root group (will be wrapped by global translation)
+group root-node root
+
+# Assign lights to the root group (so they affect the entire scene)
+# assign-light root-node two-light
+
+##########################################################################
+# Floor
+##########################################################################
+translate floor-trans translate-floor 0 -25 0
+scale floor-scale scale-floor 500 5 500
+leaf floor-leaf floor instanceof box
+assign-material floor-leaf mat-floor
+assign-texture floor-leaf white
+add-child floor-leaf floor-scale
+add-child floor-scale floor-trans
+add-child floor-trans root-node
+
+##############################################################################
+# Tower 1
+##############################################################################
+translate tower1-trans translate-tower1 -200 0 -200
+group tower1-group tower1
+add-child tower1-group tower1-trans
+add-child tower1-trans root-node
+assign-light tower1-group one-light
+
+# Tower 1 - Block 1 (base block)
+translate t1b1 translate-t1b1 0 25 0
+scale s1b1 scale-t1b1 50 50 50
+leaf t1b1-leaf tower1-block1 instanceof box
+assign-material t1b1-leaf mat-tower
+add-child t1b1-leaf s1b1
+add-child s1b1 t1b1
+add-child t1b1 tower1-group
+
+# Tower 1 - Block 2 (middle block)
+translate t1b2 translate-t1b2 0 75 0
+scale s1b2 scale-t1b2 50 50 50
+leaf t1b2-leaf tower1-block2 instanceof box
+assign-material t1b2-leaf mat-tower
+add-child t1b2-leaf s1b2
+add-child s1b2 t1b2
+add-child t1b2 tower1-group
+
+# Tower 1 - Block 3 (upper block)
+translate t1b3 translate-t1b3 0 125 0
+scale s1b3 scale-t1b3 50 50 50
+leaf t1b3-leaf tower1-block3 instanceof box
+assign-material t1b3-leaf mat-tower
+add-child t1b3-leaf s1b3
+add-child s1b3 t1b3
+add-child t1b3 tower1-group
+
+# Tower 1 - Top
+translate t1top translate-t1top 0 175 0
+scale s1top scale-t1top 50 50 50
+leaf t1top-leaf tower1-top instanceof sphere
+assign-material t1top-leaf mat-top
+assign-texture t1top-leaf checkerboard
+add-child t1top-leaf s1top
+add-child s1top t1top
+add-child t1top tower1-group
+
+##############################################################################
+# Tower 2
+##############################################################################
+translate tower2-trans translate-tower2 200 0 200
+group tower2-group tower2
+add-child tower2-group tower2-trans
+add-child tower2-trans root-node
+
+# Tower 2 - Block 1 (base block)
+translate t2b1 translate-t2b1 0 25 0
+scale s2b1 scale-t2b1 50 50 50
+leaf t2b1-leaf tower2-block1 instanceof box
+assign-material t2b1-leaf mat-tower
+add-child t2b1-leaf s2b1
+add-child s2b1 t2b1
+add-child t2b1 tower2-group
+
+# Tower 2 - Block 2 (middle block)
+translate t2b2 translate-t2b2 0 75 0
+scale s2b2 scale-t2b2 50 50 50
+leaf t2b2-leaf tower2-block2 instanceof box
+assign-material t2b2-leaf mat-tower
+add-child t2b2-leaf s2b2
+add-child s2b2 t2b2
+add-child t2b2 tower2-group
+
+# Tower 2 - Block 3 (upper block)
+translate t2b3 translate-t2b3 0 125 0
+scale s2b3 scale-t2b3 50 50 50
+leaf t2b3-leaf tower2-block3 instanceof box
+assign-material t2b3-leaf mat-tower
+add-child t2b3-leaf s2b3
+add-child s2b3 t2b3
+add-child t2b3 tower2-group
+
+# Tower 2 - Top
+translate t2top translate-t2top 0 175 0
+scale s2top scale-t2top 50 50 50
+leaf t2top-leaf tower2-top instanceof sphere
+assign-material t2top-leaf mat-top
+assign-texture t2top-leaf checkerboard
+add-child t2top-leaf s2top
+add-child s2top t2top
+add-child t2top tower2-group
+
+##########################################################################
+# Scattered Shapes
+##########################################################################
+
+# Scattered Shape 1: sphere
+translate ssc1-trans translate-ssc1 -100 0 100
+scale ssc1-scale scale-ssc1 50 50 50
+leaf ssc1-leaf sc-sphere1 instanceof sphere
+assign-material ssc1-leaf mat-sphere
+add-child ssc1-leaf ssc1-scale
+add-child ssc1-scale ssc1-trans
+add-child ssc1-trans root-node
+
+# Scattered Shape 2: box
+translate ssc2-trans translate-ssc2 100 0 -100
+scale ssc2-scale scale-ssc2 50 50 50
+leaf ssc2-leaf sc-box1 instanceof box
+assign-material ssc2-leaf mat-sky
+add-child ssc2-leaf ssc2-scale
+add-child ssc2-scale ssc2-trans
+add-child ssc2-trans root-node
+
+# Scattered Shape 3: sphere
+translate ssc3-trans translate-ssc3 -250 0 250
+scale ssc3-scale scale-ssc3 50 50 50
+leaf ssc3-leaf sc-sphere2 instanceof sphere
+assign-material ssc3-leaf mat-tower
+add-child ssc3-leaf ssc3-scale
+add-child ssc3-scale ssc3-trans
+add-child ssc3-trans root-node
+
+# Scattered Shape 4: box
+translate ssc4-trans translate-ssc4 250 0 -250
+scale ssc4-scale scale-ssc4 50 50 50
+leaf ssc4-leaf sc-box2 instanceof box
+assign-material ssc4-leaf mat-sphere
+add-child ssc4-leaf ssc4-scale
+add-child ssc4-scale ssc4-trans
+add-child ssc4-trans root-node
+
+# Scattered Shape 5: sphere
+translate ssc5-trans translate-ssc5 0 0 0
+scale ssc5-scale scale-ssc5 50 50 50
+leaf ssc5-leaf sc-sphere3 instanceof sphere
+assign-material ssc5-leaf mat-sky
+add-child ssc5-leaf ssc5-scale
+add-child ssc5-scale ssc5-trans
+add-child ssc5-trans root-node
+
+# Scattered Shape 6: elongated rectangle
+translate ssc6-trans translate-ssc6 150 0 0
+scale ssc6-scale scale-ssc6 75 50 50    # longer in the X-axis
+leaf ssc6-leaf sc-box3 instanceof box
+assign-material ssc6-leaf mat-sky
+assign-texture ssc6-leaf white
+add-child ssc6-leaf ssc6-scale
+add-child ssc6-scale ssc6-trans
+add-child ssc6-trans root-node
+
+# Scattered Shape 7: elongated sphere
+translate ssc7-trans translate-ssc7 -150 0 -50
+scale ssc7-scale scale-ssc7 50 75 50    # elongated in the Y-axis
+leaf ssc7-leaf sc-sphere4 instanceof sphere
+assign-material ssc7-leaf mat-sphere
+add-child ssc7-leaf ssc7-scale
+add-child ssc7-scale ssc7-trans
+add-child ssc7-trans root-node
+
+# Scattered Shape 8: elongated rectangle
+translate ssc8-trans translate-ssc8 0 0 150
+scale ssc8-scale scale-ssc8 50 100 50   # tall in the Y-axis
+leaf ssc8-leaf sc-box4 instanceof box
+assign-material ssc8-leaf mat-tower
+add-child ssc8-leaf ssc8-scale
+add-child ssc8-scale ssc8-trans
+add-child ssc8-trans root-node
+
+# Scattered Shape 9: elongated sphere
+translate ssc9-trans translate-ssc9 50 0 -150
+scale ssc9-scale scale-ssc9 50 50 25    # flattened along the Z-axis
+leaf ssc9-leaf sc-sphere5 instanceof sphere
+assign-material ssc9-leaf mat-top
+add-child ssc9-leaf ssc9-scale
+add-child ssc9-scale ssc9-trans
+add-child ssc9-trans root-node
+
+# Wrap the scene into global translation
+add-child root-node global-trans
+assign-root global-trans

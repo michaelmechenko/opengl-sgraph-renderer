@@ -1,0 +1,1026 @@
+#all the instances
+instance box models/box.obj
+material mat-0
+emission 0.00125126 0.563585 0.193304
+ambient 0.00125126 0.563585 0.193304
+diffuse 0.00125126 0.563585 0.193304
+specular 0.00125126 0.563585 0.193304
+shininess 10
+end-material
+material mat-1
+emission 0.80874 0.585009 0.479873
+ambient 0.80874 0.585009 0.479873
+diffuse 0.80874 0.585009 0.479873
+specular 0.80874 0.585009 0.479873
+shininess 10
+end-material
+material mat-2
+emission 0.350291 0.895962 0.82284
+ambient 0.350291 0.895962 0.82284
+diffuse 0.350291 0.895962 0.82284
+specular 0.350291 0.895962 0.82284
+shininess 10
+end-material
+material mat-3
+emission 0.746605 0.174108 0.858943
+ambient 0.746605 0.174108 0.858943
+diffuse 0.746605 0.174108 0.858943
+specular 0.746605 0.174108 0.858943
+shininess 10
+end-material
+material mat-4
+emission 0.710501 0.513535 0.303995
+ambient 0.710501 0.513535 0.303995
+diffuse 0.710501 0.513535 0.303995
+specular 0.710501 0.513535 0.303995
+shininess 10
+end-material
+material mat-5
+emission 0.0149846 0.0914029 0.364452
+ambient 0.0149846 0.0914029 0.364452
+diffuse 0.0149846 0.0914029 0.364452
+specular 0.0149846 0.0914029 0.364452
+shininess 10
+end-material
+material mat-6
+emission 0.147313 0.165899 0.988525
+ambient 0.147313 0.165899 0.988525
+diffuse 0.147313 0.165899 0.988525
+specular 0.147313 0.165899 0.988525
+shininess 10
+end-material
+material mat-7
+emission 0.445692 0.119083 0.00466933
+ambient 0.445692 0.119083 0.00466933
+diffuse 0.445692 0.119083 0.00466933
+specular 0.445692 0.119083 0.00466933
+shininess 10
+end-material
+material mat-8
+emission 0.0089114 0.37788 0.531663
+ambient 0.0089114 0.37788 0.531663
+diffuse 0.0089114 0.37788 0.531663
+specular 0.0089114 0.37788 0.531663
+shininess 10
+end-material
+material mat-9
+emission 0.571184 0.601764 0.607166
+ambient 0.571184 0.601764 0.607166
+diffuse 0.571184 0.601764 0.607166
+specular 0.571184 0.601764 0.607166
+shininess 10
+end-material
+material mat-10
+emission 0.166234 0.663045 0.450789
+ambient 0.166234 0.663045 0.450789
+diffuse 0.166234 0.663045 0.450789
+specular 0.166234 0.663045 0.450789
+shininess 10
+end-material
+material mat-11
+emission 0.352123 0.0570391 0.607685
+ambient 0.352123 0.0570391 0.607685
+diffuse 0.352123 0.0570391 0.607685
+specular 0.352123 0.0570391 0.607685
+shininess 10
+end-material
+material mat-12
+emission 0.783319 0.802606 0.519883
+ambient 0.783319 0.802606 0.519883
+diffuse 0.783319 0.802606 0.519883
+specular 0.783319 0.802606 0.519883
+shininess 10
+end-material
+material mat-13
+emission 0.30195 0.875973 0.726676
+ambient 0.30195 0.875973 0.726676
+diffuse 0.30195 0.875973 0.726676
+specular 0.30195 0.875973 0.726676
+shininess 10
+end-material
+material mat-14
+emission 0.955901 0.925718 0.539354
+ambient 0.955901 0.925718 0.539354
+diffuse 0.955901 0.925718 0.539354
+specular 0.955901 0.925718 0.539354
+shininess 10
+end-material
+material mat-15
+emission 0.142338 0.462081 0.235328
+ambient 0.142338 0.462081 0.235328
+diffuse 0.142338 0.462081 0.235328
+specular 0.142338 0.462081 0.235328
+shininess 10
+end-material
+material mat-16
+emission 0.862239 0.209601 0.779656
+ambient 0.862239 0.209601 0.779656
+diffuse 0.862239 0.209601 0.779656
+specular 0.862239 0.209601 0.779656
+shininess 10
+end-material
+material mat-17
+emission 0.843654 0.996796 0.999695
+ambient 0.843654 0.996796 0.999695
+diffuse 0.843654 0.996796 0.999695
+specular 0.843654 0.996796 0.999695
+shininess 10
+end-material
+material mat-18
+emission 0.611499 0.392438 0.266213
+ambient 0.611499 0.392438 0.266213
+diffuse 0.611499 0.392438 0.266213
+specular 0.611499 0.392438 0.266213
+shininess 10
+end-material
+material mat-19
+emission 0.297281 0.840144 0.0237434
+ambient 0.297281 0.840144 0.0237434
+diffuse 0.297281 0.840144 0.0237434
+specular 0.297281 0.840144 0.0237434
+shininess 10
+end-material
+material mat-20
+emission 0.375866 0.0926237 0.677206
+ambient 0.375866 0.0926237 0.677206
+diffuse 0.375866 0.0926237 0.677206
+specular 0.375866 0.0926237 0.677206
+shininess 10
+end-material
+material mat-21
+emission 0.0562151 0.00878933 0.91879
+ambient 0.0562151 0.00878933 0.91879
+diffuse 0.0562151 0.00878933 0.91879
+specular 0.0562151 0.00878933 0.91879
+shininess 10
+end-material
+material mat-22
+emission 0.275887 0.272896 0.587909
+ambient 0.275887 0.272896 0.587909
+diffuse 0.275887 0.272896 0.587909
+specular 0.275887 0.272896 0.587909
+shininess 10
+end-material
+material mat-23
+emission 0.691183 0.837611 0.726493
+ambient 0.691183 0.837611 0.726493
+diffuse 0.691183 0.837611 0.726493
+specular 0.691183 0.837611 0.726493
+shininess 10
+end-material
+material mat-24
+emission 0.484939 0.205359 0.743736
+ambient 0.484939 0.205359 0.743736
+diffuse 0.484939 0.205359 0.743736
+specular 0.484939 0.205359 0.743736
+shininess 10
+end-material
+material mat-25
+emission 0.468459 0.457961 0.949156
+ambient 0.468459 0.457961 0.949156
+diffuse 0.468459 0.457961 0.949156
+specular 0.468459 0.457961 0.949156
+shininess 10
+end-material
+material mat-26
+emission 0.744438 0.10828 0.599048
+ambient 0.744438 0.10828 0.599048
+diffuse 0.744438 0.10828 0.599048
+specular 0.744438 0.10828 0.599048
+shininess 10
+end-material
+material mat-27
+emission 0.385235 0.735008 0.608966
+ambient 0.385235 0.735008 0.608966
+diffuse 0.385235 0.735008 0.608966
+specular 0.385235 0.735008 0.608966
+shininess 10
+end-material
+material mat-28
+emission 0.572405 0.361339 0.151555
+ambient 0.572405 0.361339 0.151555
+diffuse 0.572405 0.361339 0.151555
+specular 0.572405 0.361339 0.151555
+shininess 10
+end-material
+material mat-29
+emission 0.225105 0.425153 0.802881
+ambient 0.225105 0.425153 0.802881
+diffuse 0.225105 0.425153 0.802881
+specular 0.225105 0.425153 0.802881
+shininess 10
+end-material
+material mat-30
+emission 0.517106 0.98999 0.751549
+ambient 0.517106 0.98999 0.751549
+diffuse 0.517106 0.98999 0.751549
+specular 0.517106 0.98999 0.751549
+shininess 10
+end-material
+material mat-31
+emission 0.345561 0.168981 0.657308
+ambient 0.345561 0.168981 0.657308
+diffuse 0.345561 0.168981 0.657308
+specular 0.345561 0.168981 0.657308
+shininess 10
+end-material
+material mat-32
+emission 0.491897 0.0635395 0.699759
+ambient 0.491897 0.0635395 0.699759
+diffuse 0.491897 0.0635395 0.699759
+specular 0.491897 0.0635395 0.699759
+shininess 10
+end-material
+material mat-33
+emission 0.504807 0.147496 0.949583
+ambient 0.504807 0.147496 0.949583
+diffuse 0.504807 0.147496 0.949583
+specular 0.504807 0.147496 0.949583
+shininess 10
+end-material
+material mat-34
+emission 0.141575 0.905118 0.692892
+ambient 0.141575 0.905118 0.692892
+diffuse 0.141575 0.905118 0.692892
+specular 0.141575 0.905118 0.692892
+shininess 10
+end-material
+material mat-35
+emission 0.303049 0.426557 0.0703757
+ambient 0.303049 0.426557 0.0703757
+diffuse 0.303049 0.426557 0.0703757
+specular 0.303049 0.426557 0.0703757
+shininess 10
+end-material
+material mat-36
+emission 0.966613 0.683187 0.153233
+ambient 0.966613 0.683187 0.153233
+diffuse 0.966613 0.683187 0.153233
+specular 0.966613 0.683187 0.153233
+shininess 10
+end-material
+material mat-37
+emission 0.877255 0.82168 0.582049
+ambient 0.877255 0.82168 0.582049
+diffuse 0.877255 0.82168 0.582049
+specular 0.877255 0.82168 0.582049
+shininess 10
+end-material
+material mat-38
+emission 0.191351 0.177892 0.817194
+ambient 0.191351 0.177892 0.817194
+diffuse 0.191351 0.177892 0.817194
+specular 0.191351 0.177892 0.817194
+shininess 10
+end-material
+material mat-39
+emission 0.475265 0.155553 0.503922
+ambient 0.475265 0.155553 0.503922
+diffuse 0.475265 0.155553 0.503922
+specular 0.475265 0.155553 0.503922
+shininess 10
+end-material
+material mat-40
+emission 0.732017 0.405591 0.27958
+ambient 0.732017 0.405591 0.27958
+diffuse 0.732017 0.405591 0.27958
+specular 0.732017 0.405591 0.27958
+shininess 10
+end-material
+material mat-41
+emission 0.568743 0.682241 0.755852
+ambient 0.568743 0.682241 0.755852
+diffuse 0.568743 0.682241 0.755852
+specular 0.568743 0.682241 0.755852
+shininess 10
+end-material
+material mat-42
+emission 0.721915 0.475295 0.12302
+ambient 0.721915 0.475295 0.12302
+diffuse 0.721915 0.475295 0.12302
+specular 0.721915 0.475295 0.12302
+shininess 10
+end-material
+material mat-43
+emission 0.367809 0.834681 0.0350963
+ambient 0.367809 0.834681 0.0350963
+diffuse 0.367809 0.834681 0.0350963
+specular 0.367809 0.834681 0.0350963
+shininess 10
+end-material
+material mat-44
+emission 0.517014 0.662984 0.426221
+ambient 0.517014 0.662984 0.426221
+diffuse 0.517014 0.662984 0.426221
+specular 0.517014 0.662984 0.426221
+shininess 10
+end-material
+material mat-45
+emission 0.104678 0.949339 0.921384
+ambient 0.104678 0.949339 0.921384
+diffuse 0.104678 0.949339 0.921384
+specular 0.104678 0.949339 0.921384
+shininess 10
+end-material
+material mat-46
+emission 0.549547 0.345988 0.471725
+ambient 0.549547 0.345988 0.471725
+diffuse 0.549547 0.345988 0.471725
+specular 0.549547 0.345988 0.471725
+shininess 10
+end-material
+material mat-47
+emission 0.374981 0.84698 0.316874
+ambient 0.374981 0.84698 0.316874
+diffuse 0.374981 0.84698 0.316874
+specular 0.374981 0.84698 0.316874
+shininess 10
+end-material
+material mat-48
+emission 0.456099 0.271889 0.982971
+ambient 0.456099 0.271889 0.982971
+diffuse 0.456099 0.271889 0.982971
+specular 0.456099 0.271889 0.982971
+shininess 10
+end-material
+material mat-49
+emission 0.2978 0.739189 0.567278
+ambient 0.2978 0.739189 0.567278
+diffuse 0.2978 0.739189 0.567278
+specular 0.2978 0.739189 0.567278
+shininess 10
+end-material
+material mat-50
+emission 0.19599 0.761315 0.839442
+ambient 0.19599 0.761315 0.839442
+diffuse 0.19599 0.761315 0.839442
+specular 0.19599 0.761315 0.839442
+shininess 10
+end-material
+material mat-51
+emission 0.397656 0.5009 0.890164
+ambient 0.397656 0.5009 0.890164
+diffuse 0.397656 0.5009 0.890164
+specular 0.397656 0.5009 0.890164
+shininess 10
+end-material
+material mat-52
+emission 0.0274667 0.994629 0.572588
+ambient 0.0274667 0.994629 0.572588
+diffuse 0.0274667 0.994629 0.572588
+specular 0.0274667 0.994629 0.572588
+shininess 10
+end-material
+material mat-53
+emission 0.0505081 0.531327 0.194067
+ambient 0.0505081 0.531327 0.194067
+diffuse 0.0505081 0.531327 0.194067
+specular 0.0505081 0.531327 0.194067
+shininess 10
+end-material
+material mat-54
+emission 0.843043 0.626759 0.657613
+ambient 0.843043 0.626759 0.657613
+diffuse 0.843043 0.626759 0.657613
+specular 0.843043 0.626759 0.657613
+shininess 10
+end-material
+material mat-55
+emission 0.197851 0.842158 0.123325
+ambient 0.197851 0.842158 0.123325
+diffuse 0.197851 0.842158 0.123325
+specular 0.197851 0.842158 0.123325
+shininess 10
+end-material
+material mat-56
+emission 0.109928 0.743126 0.314066
+ambient 0.109928 0.743126 0.314066
+diffuse 0.109928 0.743126 0.314066
+specular 0.109928 0.743126 0.314066
+shininess 10
+end-material
+material mat-57
+emission 0.941069 0.286081 0.336314
+ambient 0.941069 0.286081 0.336314
+diffuse 0.941069 0.286081 0.336314
+specular 0.941069 0.286081 0.336314
+shininess 10
+end-material
+material mat-58
+emission 0.140263 0.733085 0.83462
+ambient 0.140263 0.733085 0.83462
+diffuse 0.140263 0.733085 0.83462
+specular 0.140263 0.733085 0.83462
+shininess 10
+end-material
+material mat-59
+emission 0.707999 0.600238 0.747215
+ambient 0.707999 0.600238 0.747215
+diffuse 0.707999 0.600238 0.747215
+specular 0.707999 0.600238 0.747215
+shininess 10
+end-material
+material mat-60
+emission 0.252724 0.144475 0.00161748
+ambient 0.252724 0.144475 0.00161748
+diffuse 0.252724 0.144475 0.00161748
+specular 0.252724 0.144475 0.00161748
+shininess 10
+end-material
+material mat-61
+emission 0.0610065 0.806238 0.852626
+ambient 0.0610065 0.806238 0.852626
+diffuse 0.0610065 0.806238 0.852626
+specular 0.0610065 0.806238 0.852626
+shininess 10
+end-material
+material mat-62
+emission 0.210578 0.115604 0.553209
+ambient 0.210578 0.115604 0.553209
+diffuse 0.210578 0.115604 0.553209
+specular 0.210578 0.115604 0.553209
+shininess 10
+end-material
+material mat-63
+emission 0.0142521 0.113773 0.454512
+ambient 0.0142521 0.113773 0.454512
+diffuse 0.0142521 0.113773 0.454512
+specular 0.0142521 0.113773 0.454512
+shininess 10
+end-material
+material mat-64
+emission 0.75222 0.686148 0.543443
+ambient 0.75222 0.686148 0.543443
+diffuse 0.75222 0.686148 0.543443
+specular 0.75222 0.686148 0.543443
+shininess 10
+end-material
+material mat-65
+emission 0.0738853 0.43672 0.201941
+ambient 0.0738853 0.43672 0.201941
+diffuse 0.0738853 0.43672 0.201941
+specular 0.0738853 0.43672 0.201941
+shininess 10
+end-material
+material mat-66
+emission 0.696219 0.290353 0.436689
+ambient 0.696219 0.290353 0.436689
+diffuse 0.696219 0.290353 0.436689
+specular 0.696219 0.290353 0.436689
+shininess 10
+end-material
+material mat-67
+emission 0.232429 0.577868 0.532579
+ambient 0.232429 0.577868 0.532579
+diffuse 0.232429 0.577868 0.532579
+specular 0.232429 0.577868 0.532579
+shininess 10
+end-material
+material mat-68
+emission 0.628681 0.160192 0.504135
+ambient 0.628681 0.160192 0.504135
+diffuse 0.628681 0.160192 0.504135
+specular 0.628681 0.160192 0.504135
+shininess 10
+end-material
+material mat-69
+emission 0.963042 0.695761 0.924802
+ambient 0.963042 0.695761 0.924802
+diffuse 0.963042 0.695761 0.924802
+specular 0.963042 0.695761 0.924802
+shininess 10
+end-material
+material mat-70
+emission 0.189947 0.335948 0.17835
+ambient 0.189947 0.335948 0.17835
+diffuse 0.189947 0.335948 0.17835
+specular 0.189947 0.335948 0.17835
+shininess 10
+end-material
+material mat-71
+emission 0.995178 0.457442 0.998016
+ambient 0.995178 0.457442 0.998016
+diffuse 0.995178 0.457442 0.998016
+specular 0.995178 0.457442 0.998016
+shininess 10
+end-material
+material mat-72
+emission 0.0975066 0.625172 0.0943938
+ambient 0.0975066 0.625172 0.0943938
+diffuse 0.0975066 0.625172 0.0943938
+specular 0.0975066 0.625172 0.0943938
+shininess 10
+end-material
+group root root
+assign-root root
+translate trans-0 trans-0 5 50 50
+add-child trans-0 root
+scale scale-0 scale-0 10 100 100
+add-child scale-0 trans-0
+leaf box-0 box-0 instanceof box
+assign-material box-0 mat-0
+add-child box-0 scale-0
+translate trans-1 trans-1 10 35 50
+add-child trans-1 root
+scale scale-1 scale-1 0 70 100
+add-child scale-1 trans-1
+leaf box-1 box-1 instanceof box
+assign-material box-1 mat-1
+add-child box-1 scale-1
+translate trans-2 trans-2 10 95 50
+add-child trans-2 root
+scale scale-2 scale-2 0 10 100
+add-child scale-2 trans-2
+leaf box-2 box-2 instanceof box
+assign-material box-2 mat-2
+add-child box-2 scale-2
+translate trans-3 trans-3 10 80 45
+add-child trans-3 root
+scale scale-3 scale-3 0 20 90
+add-child scale-3 trans-3
+leaf box-3 box-3 instanceof box
+assign-material box-3 mat-3
+add-child box-3 scale-3
+translate trans-4 trans-4 10 20 50
+add-child trans-4 root
+scale scale-4 scale-4 0 40 100
+add-child scale-4 trans-4
+leaf box-4 box-4 instanceof box
+assign-material box-4 mat-4
+add-child box-4 scale-4
+translate trans-5 trans-5 10 65 50
+add-child trans-5 root
+scale scale-5 scale-5 0 10 100
+add-child scale-5 trans-5
+leaf box-5 box-5 instanceof box
+assign-material box-5 mat-5
+add-child box-5 scale-5
+translate trans-6 trans-6 10 95 50
+add-child trans-6 root
+scale scale-6 scale-6 0 10 100
+add-child scale-6 trans-6
+leaf box-6 box-6 instanceof box
+assign-material box-6 mat-6
+add-child box-6 scale-6
+translate trans-7 trans-7 10 80 45
+add-child trans-7 root
+scale scale-7 scale-7 0 20 90
+add-child scale-7 trans-7
+leaf box-7 box-7 instanceof box
+assign-material box-7 mat-7
+add-child box-7 scale-7
+translate trans-8 trans-8 10 50 45
+add-child trans-8 root
+scale scale-8 scale-8 0 20 90
+add-child scale-8 trans-8
+leaf box-8 box-8 instanceof box
+assign-material box-8 mat-8
+add-child box-8 scale-8
+translate trans-9 trans-9 35 50 50
+add-child trans-9 root
+scale scale-9 scale-9 10 100 100
+add-child scale-9 trans-9
+leaf box-9 box-9 instanceof box
+assign-material box-9 mat-9
+add-child box-9 scale-9
+translate trans-10 trans-10 40 35 50
+add-child trans-10 root
+scale scale-10 scale-10 0 70 100
+add-child scale-10 trans-10
+leaf box-10 box-10 instanceof box
+assign-material box-10 mat-10
+add-child box-10 scale-10
+translate trans-11 trans-11 40 95 50
+add-child trans-11 root
+scale scale-11 scale-11 0 10 100
+add-child scale-11 trans-11
+leaf box-11 box-11 instanceof box
+assign-material box-11 mat-11
+add-child box-11 scale-11
+translate trans-12 trans-12 40 80 45
+add-child trans-12 root
+scale scale-12 scale-12 0 20 90
+add-child scale-12 trans-12
+leaf box-12 box-12 instanceof box
+assign-material box-12 mat-12
+add-child box-12 scale-12
+translate trans-13 trans-13 40 20 50
+add-child trans-13 root
+scale scale-13 scale-13 0 40 100
+add-child scale-13 trans-13
+leaf box-13 box-13 instanceof box
+assign-material box-13 mat-13
+add-child box-13 scale-13
+translate trans-14 trans-14 40 65 50
+add-child trans-14 root
+scale scale-14 scale-14 0 10 100
+add-child scale-14 trans-14
+leaf box-14 box-14 instanceof box
+assign-material box-14 mat-14
+add-child box-14 scale-14
+translate trans-15 trans-15 40 95 50
+add-child trans-15 root
+scale scale-15 scale-15 0 10 100
+add-child scale-15 trans-15
+leaf box-15 box-15 instanceof box
+assign-material box-15 mat-15
+add-child box-15 scale-15
+translate trans-16 trans-16 40 80 45
+add-child trans-16 root
+scale scale-16 scale-16 0 20 90
+add-child scale-16 trans-16
+leaf box-16 box-16 instanceof box
+assign-material box-16 mat-16
+add-child box-16 scale-16
+translate trans-17 trans-17 40 50 45
+add-child trans-17 root
+scale scale-17 scale-17 0 20 90
+add-child scale-17 trans-17
+leaf box-17 box-17 instanceof box
+assign-material box-17 mat-17
+add-child box-17 scale-17
+translate trans-18 trans-18 65 50 50
+add-child trans-18 root
+scale scale-18 scale-18 10 100 100
+add-child scale-18 trans-18
+leaf box-18 box-18 instanceof box
+assign-material box-18 mat-18
+add-child box-18 scale-18
+translate trans-19 trans-19 70 35 50
+add-child trans-19 root
+scale scale-19 scale-19 0 70 100
+add-child scale-19 trans-19
+leaf box-19 box-19 instanceof box
+assign-material box-19 mat-19
+add-child box-19 scale-19
+translate trans-20 trans-20 70 95 50
+add-child trans-20 root
+scale scale-20 scale-20 0 10 100
+add-child scale-20 trans-20
+leaf box-20 box-20 instanceof box
+assign-material box-20 mat-20
+add-child box-20 scale-20
+translate trans-21 trans-21 70 80 45
+add-child trans-21 root
+scale scale-21 scale-21 0 20 90
+add-child scale-21 trans-21
+leaf box-21 box-21 instanceof box
+assign-material box-21 mat-21
+add-child box-21 scale-21
+translate trans-22 trans-22 70 20 50
+add-child trans-22 root
+scale scale-22 scale-22 0 40 100
+add-child scale-22 trans-22
+leaf box-22 box-22 instanceof box
+assign-material box-22 mat-22
+add-child box-22 scale-22
+translate trans-23 trans-23 70 65 50
+add-child trans-23 root
+scale scale-23 scale-23 0 10 100
+add-child scale-23 trans-23
+leaf box-23 box-23 instanceof box
+assign-material box-23 mat-23
+add-child box-23 scale-23
+translate trans-24 trans-24 70 95 50
+add-child trans-24 root
+scale scale-24 scale-24 0 10 100
+add-child scale-24 trans-24
+leaf box-24 box-24 instanceof box
+assign-material box-24 mat-24
+add-child box-24 scale-24
+translate trans-25 trans-25 70 80 45
+add-child trans-25 root
+scale scale-25 scale-25 0 20 90
+add-child scale-25 trans-25
+leaf box-25 box-25 instanceof box
+assign-material box-25 mat-25
+add-child box-25 scale-25
+translate trans-26 trans-26 70 50 45
+add-child trans-26 root
+scale scale-26 scale-26 0 20 90
+add-child scale-26 trans-26
+leaf box-26 box-26 instanceof box
+assign-material box-26 mat-26
+add-child box-26 scale-26
+translate trans-27 trans-27 95 50 50
+add-child trans-27 root
+scale scale-27 scale-27 10 100 100
+add-child scale-27 trans-27
+leaf box-27 box-27 instanceof box
+assign-material box-27 mat-27
+add-child box-27 scale-27
+translate trans-28 trans-28 90 35 50
+add-child trans-28 root
+scale scale-28 scale-28 0 70 100
+add-child scale-28 trans-28
+leaf box-28 box-28 instanceof box
+assign-material box-28 mat-28
+add-child box-28 scale-28
+translate trans-29 trans-29 90 95 50
+add-child trans-29 root
+scale scale-29 scale-29 0 10 100
+add-child scale-29 trans-29
+leaf box-29 box-29 instanceof box
+assign-material box-29 mat-29
+add-child box-29 scale-29
+translate trans-30 trans-30 90 80 45
+add-child trans-30 root
+scale scale-30 scale-30 0 20 90
+add-child scale-30 trans-30
+leaf box-30 box-30 instanceof box
+assign-material box-30 mat-30
+add-child box-30 scale-30
+translate trans-31 trans-31 90 20 50
+add-child trans-31 root
+scale scale-31 scale-31 0 40 100
+add-child scale-31 trans-31
+leaf box-31 box-31 instanceof box
+assign-material box-31 mat-31
+add-child box-31 scale-31
+translate trans-32 trans-32 90 65 50
+add-child trans-32 root
+scale scale-32 scale-32 0 10 100
+add-child scale-32 trans-32
+leaf box-32 box-32 instanceof box
+assign-material box-32 mat-32
+add-child box-32 scale-32
+translate trans-33 trans-33 90 95 50
+add-child trans-33 root
+scale scale-33 scale-33 0 10 100
+add-child scale-33 trans-33
+leaf box-33 box-33 instanceof box
+assign-material box-33 mat-33
+add-child box-33 scale-33
+translate trans-34 trans-34 90 80 45
+add-child trans-34 root
+scale scale-34 scale-34 0 20 90
+add-child scale-34 trans-34
+leaf box-34 box-34 instanceof box
+assign-material box-34 mat-34
+add-child box-34 scale-34
+translate trans-35 trans-35 90 50 45
+add-child trans-35 root
+scale scale-35 scale-35 0 20 90
+add-child scale-35 trans-35
+leaf box-35 box-35 instanceof box
+assign-material box-35 mat-35
+add-child box-35 scale-35
+translate trans-36 trans-36 80 5 50
+add-child trans-36 root
+scale scale-36 scale-36 20 10 100
+add-child scale-36 trans-36
+leaf box-36 box-36 instanceof box
+assign-material box-36 mat-36
+add-child box-36 scale-36
+translate trans-37 trans-37 80 35 50
+add-child trans-37 root
+scale scale-37 scale-37 20 10 100
+add-child scale-37 trans-37
+leaf box-37 box-37 instanceof box
+assign-material box-37 mat-37
+add-child box-37 scale-37
+translate trans-38 trans-38 80 65 50
+add-child trans-38 root
+scale scale-38 scale-38 20 10 100
+add-child scale-38 trans-38
+leaf box-38 box-38 instanceof box
+assign-material box-38 mat-38
+add-child box-38 scale-38
+translate trans-39 trans-39 80 95 50
+add-child trans-39 root
+scale scale-39 scale-39 20 10 100
+add-child scale-39 trans-39
+leaf box-39 box-39 instanceof box
+assign-material box-39 mat-39
+add-child box-39 scale-39
+translate trans-40 trans-40 80 80 45
+add-child trans-40 root
+scale scale-40 scale-40 20 20 90
+add-child scale-40 trans-40
+leaf box-40 box-40 instanceof box
+assign-material box-40 mat-40
+add-child box-40 scale-40
+translate trans-41 trans-41 80 50 45
+add-child trans-41 root
+scale scale-41 scale-41 20 20 90
+add-child scale-41 trans-41
+leaf box-41 box-41 instanceof box
+assign-material box-41 mat-41
+add-child box-41 scale-41
+translate trans-42 trans-42 80 20 45
+add-child trans-42 root
+scale scale-42 scale-42 20 20 90
+add-child scale-42 trans-42
+leaf box-42 box-42 instanceof box
+assign-material box-42 mat-42
+add-child box-42 scale-42
+translate trans-43 trans-43 60 35 50
+add-child trans-43 root
+scale scale-43 scale-43 0 70 100
+add-child scale-43 trans-43
+leaf box-43 box-43 instanceof box
+assign-material box-43 mat-43
+add-child box-43 scale-43
+translate trans-44 trans-44 60 95 50
+add-child trans-44 root
+scale scale-44 scale-44 0 10 100
+add-child scale-44 trans-44
+leaf box-44 box-44 instanceof box
+assign-material box-44 mat-44
+add-child box-44 scale-44
+translate trans-45 trans-45 60 80 45
+add-child trans-45 root
+scale scale-45 scale-45 0 20 90
+add-child scale-45 trans-45
+leaf box-45 box-45 instanceof box
+assign-material box-45 mat-45
+add-child box-45 scale-45
+translate trans-46 trans-46 60 20 50
+add-child trans-46 root
+scale scale-46 scale-46 0 40 100
+add-child scale-46 trans-46
+leaf box-46 box-46 instanceof box
+assign-material box-46 mat-46
+add-child box-46 scale-46
+translate trans-47 trans-47 60 65 50
+add-child trans-47 root
+scale scale-47 scale-47 0 10 100
+add-child scale-47 trans-47
+leaf box-47 box-47 instanceof box
+assign-material box-47 mat-47
+add-child box-47 scale-47
+translate trans-48 trans-48 60 95 50
+add-child trans-48 root
+scale scale-48 scale-48 0 10 100
+add-child scale-48 trans-48
+leaf box-48 box-48 instanceof box
+assign-material box-48 mat-48
+add-child box-48 scale-48
+translate trans-49 trans-49 60 80 45
+add-child trans-49 root
+scale scale-49 scale-49 0 20 90
+add-child scale-49 trans-49
+leaf box-49 box-49 instanceof box
+assign-material box-49 mat-49
+add-child box-49 scale-49
+translate trans-50 trans-50 60 50 45
+add-child trans-50 root
+scale scale-50 scale-50 0 20 90
+add-child scale-50 trans-50
+leaf box-50 box-50 instanceof box
+assign-material box-50 mat-50
+add-child box-50 scale-50
+translate trans-51 trans-51 50 5 50
+add-child trans-51 root
+scale scale-51 scale-51 20 10 100
+add-child scale-51 trans-51
+leaf box-51 box-51 instanceof box
+assign-material box-51 mat-51
+add-child box-51 scale-51
+translate trans-52 trans-52 50 35 50
+add-child trans-52 root
+scale scale-52 scale-52 20 10 100
+add-child scale-52 trans-52
+leaf box-52 box-52 instanceof box
+assign-material box-52 mat-52
+add-child box-52 scale-52
+translate trans-53 trans-53 50 65 50
+add-child trans-53 root
+scale scale-53 scale-53 20 10 100
+add-child scale-53 trans-53
+leaf box-53 box-53 instanceof box
+assign-material box-53 mat-53
+add-child box-53 scale-53
+translate trans-54 trans-54 50 95 50
+add-child trans-54 root
+scale scale-54 scale-54 20 10 100
+add-child scale-54 trans-54
+leaf box-54 box-54 instanceof box
+assign-material box-54 mat-54
+add-child box-54 scale-54
+translate trans-55 trans-55 50 80 45
+add-child trans-55 root
+scale scale-55 scale-55 20 20 90
+add-child scale-55 trans-55
+leaf box-55 box-55 instanceof box
+assign-material box-55 mat-55
+add-child box-55 scale-55
+translate trans-56 trans-56 50 50 45
+add-child trans-56 root
+scale scale-56 scale-56 20 20 90
+add-child scale-56 trans-56
+leaf box-56 box-56 instanceof box
+assign-material box-56 mat-56
+add-child box-56 scale-56
+translate trans-57 trans-57 50 20 45
+add-child trans-57 root
+scale scale-57 scale-57 20 20 90
+add-child scale-57 trans-57
+leaf box-57 box-57 instanceof box
+assign-material box-57 mat-57
+add-child box-57 scale-57
+translate trans-58 trans-58 30 35 50
+add-child trans-58 root
+scale scale-58 scale-58 0 70 100
+add-child scale-58 trans-58
+leaf box-58 box-58 instanceof box
+assign-material box-58 mat-58
+add-child box-58 scale-58
+translate trans-59 trans-59 30 95 50
+add-child trans-59 root
+scale scale-59 scale-59 0 10 100
+add-child scale-59 trans-59
+leaf box-59 box-59 instanceof box
+assign-material box-59 mat-59
+add-child box-59 scale-59
+translate trans-60 trans-60 30 80 45
+add-child trans-60 root
+scale scale-60 scale-60 0 20 90
+add-child scale-60 trans-60
+leaf box-60 box-60 instanceof box
+assign-material box-60 mat-60
+add-child box-60 scale-60
+translate trans-61 trans-61 30 20 50
+add-child trans-61 root
+scale scale-61 scale-61 0 40 100
+add-child scale-61 trans-61
+leaf box-61 box-61 instanceof box
+assign-material box-61 mat-61
+add-child box-61 scale-61
+translate trans-62 trans-62 30 65 50
+add-child trans-62 root
+scale scale-62 scale-62 0 10 100
+add-child scale-62 trans-62
+leaf box-62 box-62 instanceof box
+assign-material box-62 mat-62
+add-child box-62 scale-62
+translate trans-63 trans-63 30 95 50
+add-child trans-63 root
+scale scale-63 scale-63 0 10 100
+add-child scale-63 trans-63
+leaf box-63 box-63 instanceof box
+assign-material box-63 mat-63
+add-child box-63 scale-63
+translate trans-64 trans-64 30 80 45
+add-child trans-64 root
+scale scale-64 scale-64 0 20 90
+add-child scale-64 trans-64
+leaf box-64 box-64 instanceof box
+assign-material box-64 mat-64
+add-child box-64 scale-64
+translate trans-65 trans-65 30 50 45
+add-child trans-65 root
+scale scale-65 scale-65 0 20 90
+add-child scale-65 trans-65
+leaf box-65 box-65 instanceof box
+assign-material box-65 mat-65
+add-child box-65 scale-65
+translate trans-66 trans-66 20 5 50
+add-child trans-66 root
+scale scale-66 scale-66 20 10 100
+add-child scale-66 trans-66
+leaf box-66 box-66 instanceof box
+assign-material box-66 mat-66
+add-child box-66 scale-66
+translate trans-67 trans-67 20 35 50
+add-child trans-67 root
+scale scale-67 scale-67 20 10 100
+add-child scale-67 trans-67
+leaf box-67 box-67 instanceof box
+assign-material box-67 mat-67
+add-child box-67 scale-67
+translate trans-68 trans-68 20 65 50
+add-child trans-68 root
+scale scale-68 scale-68 20 10 100
+add-child scale-68 trans-68
+leaf box-68 box-68 instanceof box
+assign-material box-68 mat-68
+add-child box-68 scale-68
+translate trans-69 trans-69 20 95 50
+add-child trans-69 root
+scale scale-69 scale-69 20 10 100
+add-child scale-69 trans-69
+leaf box-69 box-69 instanceof box
+assign-material box-69 mat-69
+add-child box-69 scale-69
+translate trans-70 trans-70 20 80 45
+add-child trans-70 root
+scale scale-70 scale-70 20 20 90
+add-child scale-70 trans-70
+leaf box-70 box-70 instanceof box
+assign-material box-70 mat-70
+add-child box-70 scale-70
+translate trans-71 trans-71 20 50 45
+add-child trans-71 root
+scale scale-71 scale-71 20 20 90
+add-child scale-71 trans-71
+leaf box-71 box-71 instanceof box
+assign-material box-71 mat-71
+add-child box-71 scale-71
+translate trans-72 trans-72 20 20 45
+add-child trans-72 root
+scale scale-72 scale-72 20 20 90
+add-child scale-72 trans-72
+leaf box-72 box-72 instanceof box
+assign-material box-72 mat-72
+add-child box-72 scale-72

@@ -1,0 +1,22 @@
+# instances
+instance box models/box.obj
+
+# material
+material mat-one-box
+emission 0 0 0
+ambient 0 0.5 0
+diffuse 1 0 0
+specular 1 0 0
+shininess 0
+end-material
+
+# the root
+group root root
+scale scale scale 120 2 120
+leaf one-box one-box instanceof box 
+assign-material one-box mat-one-box
+
+add-child one-box scale 
+add-child scale root
+assign-root root
+

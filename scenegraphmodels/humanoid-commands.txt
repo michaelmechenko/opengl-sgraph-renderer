@@ -1,0 +1,464 @@
+# shapes used in this model
+instance sphere models/sphere.obj
+instance box models/box.obj
+instance cylinder models/cylinder.obj
+instance cone models/cone.obj
+
+# materials
+
+material knee-material
+ambient 1 0 0
+end-material
+
+material thigh-material
+ambient 1 1 0
+end-material
+
+material shin-material
+ambient 0 1 0
+end-material
+
+material pelvis-material
+ambient 0 1 0
+end-material
+
+material torso-material 
+ambient 0 1 0
+end-material
+
+material shoulder-material
+ambient 0 1 1
+end-material
+
+material arm-material
+ambient 1 0.5 0
+end-material
+
+material elbow-material
+ambient 0 1 0
+end-material
+
+material forearm-material
+ambient 1 1 1
+end-material
+
+material neck-material
+ambient 1 0 0
+end-material
+
+material head-material
+ambient 1 1 0
+end-material
+
+#scale human down from 72 inches to 1 inch. Thus this human is of unit height
+scale s-human s-human 0.0138 0.0138 0.0138
+
+#assign the above as the topmost node in the scenegraph
+assign-root s-human
+
+
+#the human is constructed to be roughly 72 inches height.
+
+group human human
+add-child human s-human
+
+#the human is broken down into three parts: lowerbody (legs and pelvis), midbody (torso, shoulder and arms) and upperbody (neck and face)
+
+group lowerbody lowerbody
+group midbody midbody
+group upperbody upperbody
+
+# attach lowerbody to human at a height of 42
+translate t-lowerbody-to-human t-lowerbody-to-human 0 42 0
+add-child lowerbody t-lowerbody-to-human
+add-child t-lowerbody-to-human human
+
+# attach midbody to human at a height of 60
+translate t-midbody-to-human t-midbody-to-human 0 60 0
+add-child midbody t-midbody-to-human
+add-child t-midbody-to-human human 
+
+# attach upperbody to human at a height of 68
+translate t-upperbody-to-human t-upperbody-to-human 0 68 0
+add-child upperbody t-upperbody-to-human
+add-child t-upperbody-to-human human 
+
+#--------------------lower body starts
+
+
+# left leg moved to the left a little bit (to make room for right leg)
+translate t-left-leg t-left-leg -5 0 0
+add-child t-left-leg lowerbody
+
+#the whole left leg, made of shin, knee and thigh
+group g-leftleg g-leftleg 
+add-child g-leftleg t-left-leg
+
+#the shin, with its top at the origin
+group g-lshin g-lshin
+
+translate t-lshin t-lshin 0 -20 0
+add-child t-lshin g-lshin
+
+#left shin scaled to have height 20
+scale s-lshin s-lshin 1 20 1
+add-child s-lshin t-lshin
+
+#the actual left shin
+leaf lshin lshin instanceof cylinder
+add-child lshin s-lshin 
+assign-material lshin shin-material 
+
+#the left knee
+group g-lknee g-lknee
+
+#attach the left shin to knee 
+add-child g-lshin g-lknee
+
+#left knee scaled 
+scale s-lknee s-lknee 2 2 2
+add-child s-lknee g-lknee
+
+#the actual left knee
+leaf lknee lknee instanceof sphere
+add-child lknee s-lknee
+assign-material lknee knee-material
+
+#the left thigh
+group g-lthigh g-lthigh
+
+#attach the left knee so that it is at the bottom of the left thigh
+translate lknee-to-lthigh lknee-to-lthigh 0 -22 0
+add-child g-lknee lknee-to-lthigh
+add-child lknee-to-lthigh g-lthigh
+
+translate t-lthigh t-lthigh 0 -20 0
+add-child t-lthigh g-lthigh
+
+scale s-lthigh s-lthigh 1 20 1
+add-child s-lthigh t-lthigh
+
+leaf lthigh lthigh instanceof cylinder
+add-child lthigh s-lthigh 
+assign-material lthigh thigh-material 
+
+#finally, attach thigh to left leg
+add-child g-lthigh g-leftleg
+
+#end left leg
+
+#--------------
+
+# right leg moved to the right a little bit
+translate t-right-leg t-right-leg 5 0 0
+add-child t-right-leg lowerbody
+
+#the whole right leg, made of shin, knee and thigh
+group g-rightleg g-rightleg 
+add-child g-rightleg t-right-leg
+
+#the shin, with its top at the origin
+group g-rshin g-rshin
+
+translate t-rshin t-rshin 0 -20 0
+add-child t-rshin g-rshin
+
+#shin scaled to have height 20
+scale s-rshin s-rshin 1 20 1
+add-child s-rshin t-rshin
+
+#the actual right shin
+leaf rshin rshin instanceof cylinder
+add-child rshin s-rshin 
+assign-material rshin shin-material 
+
+#the right knee
+group g-rknee g-rknee
+
+#attach the right shin to knee 
+add-child g-rshin g-rknee
+
+#right knee scaled 
+scale s-rknee s-rknee 2 2 2
+add-child s-rknee g-rknee
+
+#the actual right knee
+leaf rknee rknee instanceof sphere
+add-child rknee s-rknee
+assign-material rknee knee-material
+
+#the right thigh
+group g-rthigh g-rthigh
+
+#attach the right knee so that it is at the bottom of the right thigh
+translate rknee-to-rthigh rknee-to-rthigh 0 -22 0
+add-child g-rknee rknee-to-rthigh
+add-child rknee-to-rthigh g-rthigh
+
+translate t-rthigh t-rthigh 0 -20 0
+add-child t-rthigh g-rthigh
+
+scale s-rthigh s-rthigh 1 20 1
+add-child s-rthigh t-rthigh
+
+leaf rthigh rthigh instanceof cylinder
+add-child rthigh s-rthigh 
+assign-material rthigh thigh-material 
+
+#finally, attach thigh to right leg
+add-child g-rthigh g-rightleg
+
+#end right leg
+
+#---------------
+
+
+#pelvis
+
+group g-pelvis g-pelvis
+add-child g-pelvis lowerbody
+
+translate t-pelvis t-pelvis -5 0 0 #42 high
+add-child t-pelvis g-pelvis
+
+rotate r-pelvis r-pelvis -90 0 0 1
+add-child r-pelvis t-pelvis
+
+scale s-pelvis s-pelvis 1 10 1
+add-child s-pelvis r-pelvis
+
+leaf pelvis pelvis instanceof cylinder
+add-child pelvis s-pelvis
+assign-material pelvis pelvis-material
+
+
+#--------------lower body ends
+
+
+#--------------mid body starts
+
+#torso
+
+group g-torso g-torso
+add-child g-torso midbody
+
+translate t-torso t-torso 0 -20 0
+add-child t-torso g-torso
+
+scale s-torso s-torso 2 20 2
+add-child s-torso t-torso
+
+leaf torso torso instanceof cylinder
+add-child torso s-torso
+assign-material torso torso-material
+
+
+#shoulder
+
+group g-shoulder g-shoulder
+add-child g-torso g-shoulder
+add-child g-shoulder midbody
+
+translate t-shoulder t-shoulder -8 0 0
+add-child t-shoulder g-shoulder
+
+rotate r-shoulder r-shoulder -90 0 0 1
+add-child r-shoulder t-shoulder
+
+scale s-shoulder s-shoulder 1 16 1
+add-child s-shoulder r-shoulder 
+
+leaf shoulder shoulder instanceof cylinder
+add-child shoulder s-shoulder
+assign-material shoulder shoulder-material
+
+
+
+#left arm 
+
+translate t-leftarm-to-shoulder t-leftarm-to-shoulder -8 0 0
+add-child t-leftarm-to-shoulder g-shoulder
+
+group g-leftarm g-leftarm
+add-child g-leftarm t-leftarm-to-shoulder
+
+group g-llowerarm g-llowerarm 
+
+translate t-llowerarm t-llowerarm 0 -10 0
+add-child t-llowerarm g-llowerarm
+
+scale s-llowerarm s-llowerarm 1 10 1
+add-child s-llowerarm t-llowerarm
+
+leaf llowerarm llowerarm instanceof cylinder
+add-child llowerarm s-llowerarm 
+assign-material llowerarm arm-material
+
+#left elbow
+
+group g-lelbow g-lelbow
+
+#attach left lowerarm to left elbow
+add-child g-llowerarm g-lelbow
+
+scale s-lelbow s-lelbow 2 2 2
+add-child s-lelbow g-lelbow
+
+leaf lelbow lelbow instanceof sphere
+add-child lelbow s-lelbow
+assign-material lelbow elbow-material
+
+
+# left upperarm
+
+group g-lupperarm g-lupperarm
+
+#attach left elbow to left upperarm
+translate lelbow-to-lupperarm lelbow-to-lupperarm 0 -12 0
+add-child g-lelbow lelbow-to-lupperarm
+add-child lelbow-to-lupperarm g-lupperarm
+
+translate t-lupperarm t-lupperarm 0 -10 0
+add-child t-lupperarm g-lupperarm
+
+scale s-lupperarm s-lupperarm 1 10 1
+add-child s-lupperarm t-lupperarm
+
+leaf lupperarm lupperarm instanceof cylinder
+add-child lupperarm s-lupperarm 
+assign-material lupperarm arm-material 
+
+
+#left shoulder joint
+group g-lshoulderjoint g-lshoulderjoint
+
+#attach left upperarm to left shoulder joint
+add-child g-lupperarm g-lshoulderjoint
+
+scale s-lshoulderjoint s-lshoulderjoint 2 2 2
+add-child s-lshoulderjoint g-lshoulderjoint
+
+leaf lshoulderjoint lshoulderjoint instanceof sphere
+add-child lshoulderjoint s-lshoulderjoint
+assign-material lshoulderjoint shoulder-material
+
+
+add-child g-lshoulderjoint g-leftarm
+
+#left arm done
+
+#-----------
+
+#right arm 
+
+translate t-rightarm-to-shoulder t-rightarm-to-shoulder 8 0 0
+add-child t-rightarm-to-shoulder g-shoulder
+
+group g-rightarm g-rightarm
+add-child g-rightarm t-rightarm-to-shoulder
+
+#right lower arm
+group g-rlowerarm g-rlowerarm 
+
+translate t-rlowerarm t-rlowerarm 0 -10 0
+add-child t-rlowerarm g-rlowerarm
+
+scale s-rlowerarm s-rlowerarm 1 10 1
+add-child s-rlowerarm t-rlowerarm
+
+leaf rlowerarm rlowerarm instanceof cylinder
+add-child rlowerarm s-rlowerarm 
+assign-material rlowerarm arm-material
+
+#right elbow
+
+group g-relbow g-relbow
+
+#attach right lowerarm to right elbow
+add-child g-rlowerarm g-relbow
+
+scale s-relbow s-relbow 2 2 2
+add-child s-relbow g-relbow
+
+leaf relbow relbow instanceof sphere
+add-child relbow s-relbow
+assign-material relbow elbow-material
+
+
+# right upperarm
+
+group g-rupperarm g-rupperarm
+
+#attach right elbow to right upperarm
+translate relbow-to-rupperarm relbow-to-rupperarm 0 -12 0
+
+# TO ROTATE THE RIGHT ARM ABOUT THE ELBOW, INSERT A ROTATE BETWEEN g-relbow and relbow-to-upperarm, like the three lines below instead of the two lines below them
+
+#rotate rotate-elbow rotate-elbow 30 1 0 0
+#add-child g-relbow rotate-elbow
+#add-child rotate-elbow relbow-to-rupperarm
+
+add-child g-relbow relbow-to-rupperarm
+add-child relbow-to-rupperarm g-rupperarm
+
+translate t-rupperarm t-rupperarm 0 -10 0
+add-child t-rupperarm g-rupperarm
+
+scale s-rupperarm s-rupperarm 1 10 1
+add-child s-rupperarm t-rupperarm
+
+leaf rupperarm rupperarm instanceof cylinder
+add-child rupperarm s-rupperarm 
+assign-material rupperarm arm-material 
+
+
+#right shoulder joint
+group g-rshoulderjoint g-rshoulderjoint
+
+#attach right upperarm to right shoulder joint
+add-child g-rupperarm g-rshoulderjoint
+
+scale s-rshoulderjoint s-rshoulderjoint 2 2 2
+add-child s-rshoulderjoint g-rshoulderjoint
+
+leaf rshoulderjoint rshoulderjoint instanceof sphere
+add-child rshoulderjoint s-rshoulderjoint
+assign-material rshoulderjoint shoulder-material
+
+add-child g-rshoulderjoint g-rightarm
+
+#right arm done
+
+#midbody done
+
+
+#----------------upper body
+
+#neck
+
+group g-neck g-neck
+
+scale s-neck s-neck 1 5 1 
+add-child s-neck g-neck
+
+leaf neck neck instanceof cylinder
+add-child neck s-neck
+assign-material neck neck-material
+
+#head
+
+group g-head g-head
+
+translate t-neck-to-head t-neck-to-head 0 -7 0
+add-child g-neck t-neck-to-head
+add-child t-neck-to-head g-head
+
+scale s-head s-head 3 5 3
+add-child s-head g-head
+
+leaf head head instanceof sphere
+add-child head s-head
+assign-material head head-material
+
+add-child g-head upperbody
+

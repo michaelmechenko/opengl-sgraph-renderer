@@ -1,0 +1,233 @@
+instance sphere models/sphere.obj
+instance box models/box.obj
+instance cylinder models/cylinder.obj
+instance cone models/cone.obj
+
+material head-mat
+ambient 1 1 0.8
+end-material
+
+material eye-mat
+ambient 0 0 0
+end-material
+
+material nose-mat
+ambient 1 0 0
+end-material
+
+material hat-mat
+ambient 1 0 1
+end-material
+
+group root root
+assign-root root
+
+#scenegraph: root
+
+scale scalebase scalebase 50 5 50 
+add-child scalebase root
+
+leaf base base instanceof box
+material mat-base 
+ambient 0.5 0.5 0.5
+end-material
+assign-material base mat-base
+add-child base scalebase
+
+#scenegraph: 
+# root 
+#   - scalebase
+#       - base        
+
+translate translate-whole-face translate-whole-face 0 25 0
+add-child translate-whole-face root
+
+group face face 
+add-child face translate-whole-face
+
+#scenegraph: 
+# root 
+#   - scalebase
+#       - base  
+#   - translate-whole-face
+#       - face     
+
+scale scalehead scalehead 20 25 20
+add-child scalehead face
+
+leaf head head instanceof sphere
+assign-material head head-mat
+add-child head scalehead
+
+#scenegraph: 
+# root 
+#   - scalebase
+#       - base  
+#   - translate-whole-face
+#       - face 
+#           - scalehead
+#               - head 
+
+translate translate-left-eye translate-left-eye 7 15 12
+add-child translate-left-eye face
+
+scale scale-left-eye scale-left-eye 3 4 3
+add-child scale-left-eye translate-left-eye
+
+leaf left-eye left-eye instanceof sphere
+assign-material left-eye eye-mat
+add-child left-eye scale-left-eye
+
+#scenegraph: 
+# root 
+#   - scalebase
+#       - base  
+#   - translate-whole-face
+#       - face
+#           - scalehead
+#               - head 
+#           - translate-left-eye
+#               - scale-left-eye
+#                   - left-eye
+#    
+
+
+translate translate-right-eye translate-right-eye -7 15 12
+add-child translate-right-eye face
+
+scale scale-right-eye scale-right-eye 3 4 3
+add-child scale-right-eye translate-right-eye
+
+leaf right-eye right-eye instanceof sphere
+assign-material right-eye eye-mat
+add-child right-eye scale-right-eye
+
+#scenegraph: 
+# root 
+#   - scalebase
+#       - base  
+#   - translate-whole-face
+#       - face 
+#           - scalehead
+#               - head 
+#           - translate-left-eye
+#               - scale-left-eye
+#                   - left-eye
+#           - translate-right-eye
+#               - scale-right-eye
+#                   - right-eye
+
+
+translate translate-nose translate-nose 0 10 10
+add-child translate-nose face
+rotate rotate-nose rotate-nose 90 1 0 0
+add-child rotate-nose translate-nose
+scale scale-nose scale-nose 3 20 3
+add-child scale-nose rotate-nose
+
+leaf nose nose instanceof cylinder
+assign-material nose nose-mat
+add-child nose scale-nose
+
+#scenegraph: 
+# root 
+#   - scalebase
+#       - base  
+#   - translate-whole-face
+#       - face 
+#           - scalehead
+#               - head
+#           - translate-left-eye
+#               - scale-left-eye
+#                   - left-eye
+#           - translate-right-eye
+#               - scale-right-eye
+#                   - right-eye
+#           - translate-nose
+#               - rotate-nose
+#                   - scale-nose
+#                      - nose
+#   
+
+
+translate translate-hat translate-hat 0 20 0
+add-child translate-hat face
+scale scale-hat scale-hat 10 25 10
+add-child scale-hat translate-hat
+
+leaf hat hat instanceof cone
+assign-material hat hat-mat
+add-child hat scale-hat
+
+#scenegraph: 
+# root 
+#   - scalebase
+#       - base  
+#   - translate-whole-face
+#       - face 
+#           - scalehead
+#              - head
+#           - translate-left-eye
+#               - scale-left-eye
+#                   - left-eye
+#           - translate-right-eye
+#               - scale-right-eye
+#                   - right-eye
+#           - translate-nose
+#               - rotate-nose
+#                   - scale-nose
+#                      - nose
+#           - translate-hat
+#               - scale-hat
+#                   - hat
+
+
+
+
+translate translate-second-face translate-second-face 25 25 0
+add-child translate-second-face root
+
+copy second-face face
+add-child second-face translate-second-face
+
+#scenegraph (final): 
+# root 
+#   - scalebase
+#       - base  
+#   - translate-whole-face
+#       - face 
+#           - scalehead
+#               - head
+#           - translate-left-eye
+#               - scale-left-eye
+#                   - left-eye
+#           - translate-right-eye
+#               - scale-right-eye
+#                   - right-eye
+#           - translate-nose
+#               - rotate-nose
+#                   - scale-nose
+#                      - nose
+#           - translate-hat
+#               - scale-hat
+#                   - hat
+#   
+#   - translate-second-face
+#       - face (the copy)
+#           - scalehead
+#               - head
+#           - translate-left-eye
+#               - scale-left-eye
+#                   - left-eye
+#           - translate-right-eye
+#               - scale-right-eye
+#                   - right-eye
+#           - translate-nose
+#               - rotate-nose
+#                   - scale-nose
+#                      - nose
+#           - translate-hat
+#               - scale-hat
+#                   - hat
+
+

@@ -1,0 +1,29 @@
+group two-humanoids two-humanoids
+
+
+#one human, 80 inches tall
+
+
+translate t-human-1 t-human-1 -30 0 0
+add-child t-human-1 two-humanoids
+
+scale s-human-1 s-human-1 80 80 80
+add-child s-human-1 t-human-1
+
+import human-1 scenegraphmodels/posed-humanoid-commands.txt
+add-child human-1 s-human-1
+
+
+
+#second human, 50 inches tall
+
+translate t-human-2 t-human-2 30 0 0
+add-child t-human-2 two-humanoids
+
+scale s-human-2 s-human-2 50 50 50
+add-child s-human-2 t-human-2
+
+import human-2 scenegraphmodels/posed-humanoid-commands.txt
+add-child human-2 s-human-2
+
+assign-root two-humanoids
