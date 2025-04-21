@@ -34,3 +34,6 @@
 main
 output.ppm
 compile_commands.json
+lib
+include
+glad
