@@ -1,5 +1,3 @@
-This program implements a simple scene graph, and renders it.
-
 A scene graph has various kinds of nodes:
 
 1. Group node: a logical grouping of other nodes in the graph. It can have zero or more children.

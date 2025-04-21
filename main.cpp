@@ -28,6 +28,10 @@ bool parseArguments(int argc, char *argv[], Config &config) {
   return true;
 }
 
+// @TODO
+// fix text renderer
+// adjust opengl renderer (mouse movement, default scenes)
+// fix ray tracing reflections
 int main(int argc, char *argv[]) {
   Model model;
   View view;
