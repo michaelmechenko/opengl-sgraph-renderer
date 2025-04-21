@@ -10,7 +10,6 @@
 #include "VertexAttrib.h"
 #include "sgraph/AbstractSGNode.h"
 #include "sgraph/GLScenegraphRenderer.h"
-#include "sgraph/TextScenegraphRenderer.h"
 #include <cstdlib>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -109,7 +108,8 @@ void View::init(Callbacks *callbacks,
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-  window = glfwCreateWindow(800, 800, "OpenGL Scene Graph Renderer", NULL, NULL);
+  window =
+      glfwCreateWindow(800, 800, "OpenGL Scene Graph Renderer", NULL, NULL);
   glfwSetWindowAspectRatio(window, 800, 800);
   if (!window) {
     glfwTerminate();
