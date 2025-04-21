@@ -25,7 +25,11 @@ This application is an OpenGL-based renderer that render scenes defined using a 
 
 - **Rendering Modes**
   - **Interactive OpenGL Rendering:** Uses OpenGL shaders and a modelview stack to render the scene graph visually.
-  - **Offline Ray Tracing:** Generates a PPM image by casting rays from the camera through each pixel, applying shading and reflections recursively.
+  - **Ray Tracing:** Generates a PPM image by casting rays from the camera through each pixel, applying shading and reflections recursively.
+ 
+<p align="center">
+  <img width="700" height="700" src="https://github.com/user-attachments/assets/840fdf28-d5cf-4a51-87f6-ae0fc7810276#center">
+</p>
 
 ## File Structure
 
