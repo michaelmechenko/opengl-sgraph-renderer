@@ -1,3 +1,9 @@
+/**
+ * @file View.cpp
+ * @brief Implementation of the View class and its associated functions for
+ * scene graph rendering.
+ */
+
 #include "View.h"
 #include "GLFW/glfw3.h"
 #include "PPMImageLoader.h"
@@ -11,25 +17,46 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 namespace {
-// default camera angles
-float cameraPitch = 20.0f;
-float cameraYaw = -135.0f;
+// Default camera angles
+float cameraPitch = 20.0f; ///< Initial pitch angle for the camera in degrees.
+float cameraYaw = -135.0f; ///< Initial yaw angle for the camera in degrees.
 } // namespace
 
-bool View::shouldOutput = false;
+bool View::shouldOutput =
+    false; ///< Flag to determine if output should be generated.
 
+/**
+ * @brief Constructor for the View class.
+ *
+ * Initializes the default texture to 0.
+ */
 View::View() : defaultTexture(0) {}
 
+/**
+ * @brief Destructor for the View class.
+ *
+ * Ensures deletion of the default texture if it was created.
+ */
 View::~View() {
   if (defaultTexture != 0) {
     glDeleteTextures(1, &defaultTexture);
   }
 }
 
-// collect lights and convert to view coordinates.
+/**
+ * @brief Recursively collects lights from the scene graph.
+ *
+ * This function visits all nodes in the scene graph, converts light properties
+ * to view coordinates, and accumulates them into the provided lights vector.
+ *
+ * @param node Pointer to the current scene graph node.
+ * @param transform The current transformation matrix.
+ * @param lights Vector to store the collected lights.
+ */
 void collectLights(sgraph::SGNode *node, const glm::mat4 &transform,
                    vector<util::Light> &lights) {
   sgraph::AbstractSGNode *absNode =
@@ -61,6 +88,18 @@ void collectLights(sgraph::SGNode *node, const glm::mat4 &transform,
   }
 }
 
+/**
+ * @brief Initializes the View rendering context and scene resources.
+ *
+ * This method sets up GLFW, creates a window, initializes OpenGL via glad,
+ * loads shaders, creates default white texture, sets up objects and textures,
+ * and prepares the projection matrix.
+ *
+ * @param callbacks Pointer to the callbacks handler.
+ * @param meshes Map of mesh names to their corresponding PolygonMesh data.
+ * @param isTextRender Flag indicating if text rendering is required.
+ * @param texturePaths Map of texture names to their file paths.
+ */
 void View::init(Callbacks *callbacks,
                 map<string, util::PolygonMesh<VertexAttrib>> &meshes,
                 bool isTextRender, map<string, string> texturePaths) {
@@ -70,7 +109,7 @@ void View::init(Callbacks *callbacks,
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-  window = glfwCreateWindow(800, 800, "Scene Graphs with Lights", NULL, NULL);
+  window = glfwCreateWindow(800, 800, "OpenGL Scene Graph Renderer", NULL, NULL);
   glfwSetWindowAspectRatio(window, 800, 800);
   if (!window) {
     glfwTerminate();
@@ -101,16 +140,17 @@ void View::init(Callbacks *callbacks,
   gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
   glfwSwapInterval(1);
 
-  // phong shaders
+  // Create and setup phong shaders
   program.createProgram(string("shaders/phong-multiple.vert"),
                         string("shaders/phong-multiple.frag"));
+  // Alternative shader program creation (commented out)
   // program.createProgram(string("shaders/default.vert"),
   //                       string("shaders/default.frag"));
 
   program.enable();
   shaderLocations = program.getAllShaderVariables();
 
-  // default white texture
+  // Create default white texture
   glGenTextures(1, &defaultTexture);
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, defaultTexture);
@@ -119,14 +159,16 @@ void View::init(Callbacks *callbacks,
                white);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-  // bind image
+  // Bind the image texture to the shader
   glUniform1i(shaderLocations.getLocation("image"), 0);
 
+  // Mapping shader variable names to vertex attribute names.
   map<string, string> shaderVarsToVertexAttribs;
   shaderVarsToVertexAttribs["vPosition"] = "position";
   shaderVarsToVertexAttribs["vNormal"] = "normal";
   shaderVarsToVertexAttribs["vTexCoord"] = "texcoord";
 
+  // Initialize objects from the provided meshes.
   for (auto it = meshes.begin(); it != meshes.end(); ++it) {
     util::ObjectInstance *obj = new util::ObjectInstance(it->first);
     obj->initPolygonMesh(shaderLocations, shaderVarsToVertexAttribs,
@@ -136,6 +178,7 @@ void View::init(Callbacks *callbacks,
 
   textures["white"] = defaultTexture;
 
+  // Load model textures from given file paths.
   map<string, string> modelTexturePaths = texturePaths;
 
   for (auto const &entry : modelTexturePaths) {
@@ -164,8 +207,8 @@ void View::init(Callbacks *callbacks,
     textures[texName] = texID;
   }
 
+  // Setup the projection matrix based on the current frame buffer size.
   int window_width, window_height;
-
   glfwGetFramebufferSize(window, &window_width, &window_height);
   projection = glm::perspective(
       glm::radians(60.0f), (float)window_width / window_height, 0.1f, 10000.0f);
@@ -174,6 +217,7 @@ void View::init(Callbacks *callbacks,
     modelview.pop();
   modelview.push(glm::mat4(1.0f));
 
+  // Initialize renderers if text rendering is disabled.
   if (!isTextRender) {
     renderer = new sgraph::GLScenegraphRenderer(
         modelview, objects, shaderLocations, textures, defaultTexture);
@@ -182,6 +226,15 @@ void View::init(Callbacks *callbacks,
   }
 }
 
+/**
+ * @brief Renders the scene graph on the screen.
+ *
+ * Clears the screen, updates the camera based on spherical coordinates,
+ * applies shader parameters, collects lights from the scene graph,
+ * and renders both the scene and optionally a raycast output.
+ *
+ * @param scenegraph Pointer to the scene graph to render.
+ */
 void View::display(sgraph::IScenegraph *scenegraph) {
   program.enable();
   glClearColor(0, 0, 0, 1);
@@ -192,13 +245,12 @@ void View::display(sgraph::IScenegraph *scenegraph) {
     modelview.pop();
   modelview.push(glm::mat4(1.0f));
 
-  // compute camera position from spherical coordinates
-  float radius = 350.0f; // camera distance from center
-  float radPitch =
-      glm::radians(cameraPitch); // mouse-modified pitch angle in radians
-  float radYaw = glm::radians(cameraYaw); // mouse-modified yaw angle in radians
+  // Compute camera position from spherical coordinates.
+  float radius = 350.0f;                      // Camera distance from center.
+  float radPitch = glm::radians(cameraPitch); // Pitch angle in radians.
+  float radYaw = glm::radians(cameraYaw);     // Yaw angle in radians.
 
-  // calculate eye position on a sphere centered at (0,0,0)
+  // Calculate eye position on a sphere centered at (0,0,0)
   glm::vec3 eye;
   eye.x = radius * cos(radPitch) * sin(radYaw);
   eye.y = radius * sin(radPitch);
@@ -209,12 +261,14 @@ void View::display(sgraph::IScenegraph *scenegraph) {
   glm::mat4 viewMatrix = glm::lookAt(eye, center, up);
   modelview.top() = viewMatrix;
 
+  // Set the projection matrix uniform.
   glUniformMatrix4fv(shaderLocations.getLocation("projection"), 1, GL_FALSE,
                      glm::value_ptr(projection));
 
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, defaultTexture);
 
+  // Collect and send light parameters to the shader.
   vector<util::Light> lights;
   collectLights(scenegraph->getRoot(), modelview.top(), lights);
   int numLights = lights.size();
@@ -235,7 +289,9 @@ void View::display(sgraph::IScenegraph *scenegraph) {
                 lights[i].getSpotCutoff());
   }
 
+  // Render the scene graph using the standard renderer.
   scenegraph->getRoot()->accept(renderer);
+  // Render to output file if flag is set.
   if (shouldOutput) {
     shouldOutput = false;
     rayRenderer->render(scenegraph->getRoot(), "output.ppm");
@@ -246,8 +302,19 @@ void View::display(sgraph::IScenegraph *scenegraph) {
   glfwPollEvents();
 }
 
+/**
+ * @brief Checks if the window should be closed.
+ *
+ * @return true if the window should close, false otherwise.
+ */
 bool View::shouldWindowClose() { return glfwWindowShouldClose(window); }
 
+/**
+ * @brief Cleans up resources and closes the window.
+ *
+ * Iterates through all objects, calls cleanup, destroys the window,
+ * and terminates GLFW.
+ */
 void View::closeWindow() {
   for (auto it = objects.begin(); it != objects.end(); it++) {
     it->second->cleanup();
@@ -257,11 +324,22 @@ void View::closeWindow() {
   glfwTerminate();
 }
 
+/**
+ * @brief Rotates the camera by modifying the pitch and yaw.
+ *
+ * @param pitch Amount to change the camera's pitch.
+ * @param yaw Amount to change the camera's yaw.
+ */
 void View::rotateCamera(float pitch, float yaw) {
   cameraPitch += pitch;
   cameraYaw += yaw;
 }
 
+/**
+ * @brief Resets the camera to its default orientation.
+ *
+ * Sets the camera pitch and yaw to predefined default values.
+ */
 void View::resetCamera() {
   cameraPitch = -35.264f;
   cameraYaw = -135.0f;
