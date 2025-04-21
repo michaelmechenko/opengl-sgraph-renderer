@@ -1,6 +1,6 @@
-# Ray Tracer Application
+# OpenGL Scene Graph Renderer and Ray Tracer
 
-This application is a ray tracer that can render scenes defined using a scene graph. It supports basic shading, shadows, reflections, and texture mapping for spheres and boxes. It also includes a text-based scene graph renderer for debugging and visualization.
+This application is an OpenGL-based renderer that render scenes defined using a scene graph. It supports basic shading, shadows, reflections, and texture mapping for spheres and boxes. It also includes a text-based scene graph renderer for debugging and visualization. Finally, a bespoke ray-tracing algorithm creates a PPM render of the scene shown in the application window.
 
 ## Features
 
